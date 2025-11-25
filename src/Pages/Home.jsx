@@ -1,9 +1,12 @@
 import React from "react";
 import BookingForm from "../Components/BookingForm";
 import Footer from "../Components/Footer";
+import Header from "../Components/Header";
 const Home = () => {
 
  return  (
+    <>
+    <Header/>
     <div>
        <div className='overview'>
           <p className='whitebold'>Your Perfect Getway Awaits</p>
@@ -14,7 +17,7 @@ const Home = () => {
 <Footer />
 </div>
     </div>
-    
+    </>
 )
 
 

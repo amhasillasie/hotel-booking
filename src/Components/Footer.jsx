@@ -9,8 +9,9 @@ const Footer = () => {
           <span>🏨</span> HotelBooker
         </div>
         <p>
-          Providing the best hotel experience for your perfect getaway.
+          Providing the best hotel experience 
         </p>
+        <p>for your perfect getaway.</p>
       </div>
 
       <div className="footer-section">
