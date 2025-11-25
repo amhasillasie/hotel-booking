@@ -367,3 +367,45 @@ hr {
 .book-btn:hover {
   opacity: 0.9;
 }
+
+.amenities-wrapper {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.amenities-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.amenities-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.amenity-box {
+  width: 180px;
+  text-align: center;
+}
+
+.amenity-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  color: #1e90ff;
+}
+
+.amenity-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.amenity-box p {
+  font-size: 14px;
+  color: #666;
+}
