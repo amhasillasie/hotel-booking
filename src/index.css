@@ -1,4 +1,5 @@
 .overview{
+  margin-top: 6rem;
     background-image: url("https://media.istockphoto.com/id/178426053/photo/hotel-pool.jpg?s=612x612&w=0&k=20&c=wJ6iI6em_yPkY5CwABw0j0ce51W64XXzUFhb10pOOVo=");
      height: 25rem;
      background-size: cover;
@@ -294,11 +295,22 @@ hr {
   margin: 8px 0;
   color: #444;
 }
+/* .headerr{
+position: fixed;
+display: flex;
+  justify-content: space-between;
+} */
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95%;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0;
   padding: 18px 40px;
   background: white;
   font-family: sans-serif;
@@ -409,3 +421,138 @@ hr {
   font-size: 14px;
   color: #666;
 }
+
+
+/* MAIN LAYOUT */
+.rooms-container {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+  font-family: sans-serif;
+}
+
+/* SIDEBAR */
+.filter-sidebar {
+  width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.filter-sidebar h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Guests Counter */
+.guest-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.guest-counter button {
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+/* Price Range */
+.price-range {
+  margin-bottom: 25px;
+}
+
+.price-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Amenities */
+.amenities-list {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-size: 15px;
+}
+
+/* ROOMS SECTION */
+.rooms-section {
+  flex: 1;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Room Grid */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Card */
+.room-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 15px;
+}
+
+.room-info h3 {
+  margin-bottom: 8px;
+}
+
+.price {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.view-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-container {
+    flex-direction: column;
+  }
+
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
