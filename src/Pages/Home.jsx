@@ -2,6 +2,7 @@ import React from "react";
 import BookingForm from "../Components/BookingForm";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+
 const Home = () => {
 
  return  (
@@ -14,6 +15,7 @@ const Home = () => {
     </div>
     <div>
 <BookingForm />
+{/* <Rooms /> */}
 
     <div className="amenities-wrapper">
       <h2 className="amenities-title">Unmatched Amenities</h2>
