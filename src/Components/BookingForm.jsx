@@ -1,8 +1,10 @@
 import React from "react";
 
+
 const BookingForm = () =>
 {
     return(
+      <> 
     <div className='aroundall'>
       <div className='overall'><div>
     <header>
@@ -41,8 +43,10 @@ const BookingForm = () =>
         <div class="guests-count">1 Guest</div>
     </section>
     
-    <button class="check-button">Check Availability</button>
+    <button class="check-button" onClick={ () => window.location.href = "/bookingconfirm" } >Check Availability</button>
 </div></div></div>
+ 
+ </>
     )
 }
 

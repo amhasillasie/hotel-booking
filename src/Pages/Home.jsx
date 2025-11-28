@@ -16,6 +16,71 @@ const Home = () => {
     <div>
 <BookingForm />
 {/* <Rooms /> */}
+<div className="home-container">
+
+      {/* Discover Section */}
+      <section className="discover-section">
+        <div className="discover-image">
+          <img src="/images/room1.jpg" alt="Discover" />
+        </div>
+
+        <div className="discover-text">
+          <h2>Discover Our Story</h2>
+          <p>
+            At HotelBooker, we believe in creating unforgettable experiences.
+            Nestled in the heart of the city, our hotel offers a serene escape
+            with world-class amenities and exceptional service. From luxurious
+            rooms to exquisite dining, every detail is crafted for your comfort.
+          </p>
+          <button className="learn-btn">Learn More</button>
+        </div>
+      </section>
+
+      {/* Popular Rooms */}
+      <section className="popular-section">
+        <h2 className="section-title">Our Most Popular Rooms</h2>
+
+        <div className="room-cards">
+
+          {/* 1 */}
+          <div className="room-card">
+            <img src="/images/room2.jpg" alt="Deluxe Suite" />
+            <h3>Deluxe Suite</h3>
+            <p className="price">$250 <span>/night</span></p>
+            <div className="tags">
+              <span>King Bed</span>
+              <span>Balcony</span>
+              <span>Free WiFi</span>
+            </div>
+          </div>
+
+          {/* 2 */}
+          <div className="room-card">
+            <img src="/images/room3.jpg" alt="Family Room" />
+            <h3>Family Room</h3>
+            <p className="price">$380 <span>/night</span></p>
+            <div className="tags">
+              <span>Two Queen Beds</span>
+              <span>Spacious</span>
+              <span>Kids Corner</span>
+            </div>
+          </div>
+
+          {/* 3 */}
+          <div className="room-card">
+            <img src="/images/room4.jpg" alt="Executive Studio" />
+            <h3>Executive Studio</h3>
+            <p className="price">$320 <span>/night</span></p>
+            <div className="tags">
+              <span>Work Desk</span>
+              <span>Kitchenette</span>
+              <span>City View</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
 
     <div className="amenities-wrapper">
       <h2 className="amenities-title">Unmatched Amenities</h2>
@@ -59,9 +124,9 @@ const Home = () => {
 
 
 
-<Footer />
+
 </div>
-    </div>
+    </div><Footer />
     </>
 )
 

@@ -26,7 +26,7 @@ const Header = () => {
       </nav>
 
       {/* BUTTON */}
-      <button className="book-btn">Book Now</button>
+      <button className="book-btn"  onClick={() => window.location.href = "/bookingcard"}>Book Now</button>
     </header></div>
   );
 }

@@ -61,31 +61,31 @@ const RoomsPage = () => {
             },
             {
               name: "Family Room",
-              img: "/room2.jpg",
+              img: "/room1.jpg",
               guests: "4 Guests",
               price: "$350 / Night",
             },
             {
               name: "Standard Double",
-              img: "/room3.jpg",
+              img: "/room1.jpg",
               guests: "2 Guests",
               price: "$150 / Night",
             },
             {
               name: "Executive Room",
-              img: "/room4.jpg",
+              img: "/room1.jpg",
               guests: "2 Guests",
               price: "$420 / Night",
             },
             {
               name: "Twin Room",
-              img: "/room5.jpg",
+              img: "/room1.jpg",
               guests: "2 Guests",
               price: "$200 / Night",
             },
             {
               name: "Honeymoon Suite",
-              img: "/room6.jpg",
+              img: "/room1.jpg",
               guests: "2 Guests",
               price: "$500 / Night",
             },
@@ -98,7 +98,7 @@ const RoomsPage = () => {
                 <p>{room.guests}</p>
                 <p className="price">{room.price}</p>
 
-                <button className="view-btn">View Details</button>
+                <button className="view-btn" onClick={() => window.location.href = "/roomdetail"} >View Details</button>
               </div>
             </div>
           ))}
