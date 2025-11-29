@@ -64,8 +64,8 @@ const BookingConfirm = () => {
 
       {/* Buttons */}
       <div className="button-group">
-        <button className="btn home-btn">Back to Home</button>
-        <button className="btn rooms-btn">View Other Rooms</button>
+        <button className="btn home-btn" onClick={ () => window.location.href = "/" } >Back to Home</button>
+        <button className="btn rooms-btn" onClick={ () => window.location.href = "/rooms" } >View Other Rooms</button>
       </div>
     </div>  
          <Footer />

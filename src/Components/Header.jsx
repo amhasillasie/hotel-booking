@@ -19,9 +19,8 @@ const Header = () => {
       <nav className="nav-menu">
         <a href="#" className="nav-item active" onClick={() => window.location.href="/"}>Home</a>
         <a href="#" className="nav-item"  onClick={() => window.location.href = "/rooms"} >Rooms</a>
-        <a href="#" className="nav-item">Bars & Restaurants</a>
-        <a href="#" className="nav-item">Gallery</a>
-        <a href="#" className="nav-item">Blog</a>
+        <a href="#" className="nav-item" onClick={() => window.location.href = "/bar"}>Bars & Restaurants</a>
+        <a href="#" className="nav-item" onClick={() => window.location.href = "/gallery"}>Gallery</a>
         <a href="#" className="nav-item">Contact</a>
       </nav>
 

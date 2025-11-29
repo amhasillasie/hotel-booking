@@ -96,7 +96,7 @@ const RoomDetail = () => {
             <strong>${calculateTotal()}</strong>
           </div>
 
-          <button className="book-now-btn">Book Now</button>
+          <button className="book-now-btn" onClick={ () => window.location.href = "/bookingconfirm" } >Book Now</button>
         </div>
       </div>
     </div><Footer/></>

@@ -7,6 +7,9 @@ import BookingForm from './Components/BookingForm';
 import BookingConfirm from './Pages/BookingConfirm';
 import AdminLogin from './Pages/Admin/AdminLogin';
 import Dashboard from './Pages/Admin/Dashboard';
+import No from './Pages/No';
+import Bar from './Pages/Bar';
+import Gallery from './Pages/Gallery';
 
 function App() {
  
@@ -23,8 +26,11 @@ function App() {
         <Route path='/bookingconfirm' element = {<BookingConfirm/>} />
         <Route path='/admin' element = {<AdminLogin/>} />
         <Route path='/dashboard' element = {<Dashboard />} />
-      </Routes>
-    </BrowserRouter>
+        <Route path='no' element = {<No />} /> 
+        <Route path='/bar' element = {<Bar/>} /> 
+        <Route path='/gallery' element = {<Gallery/>} /> 
+      </Routes> 
+    </BrowserRouter> 
     </div>
   )
 }

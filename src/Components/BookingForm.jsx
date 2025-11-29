@@ -43,7 +43,7 @@ const BookingForm = () =>
         <div class="guests-count">1 Guest</div>
     </section>
     
-    <button class="check-button" onClick={ () => window.location.href = "/bookingconfirm" } >Check Availability</button>
+    <button class="check-button" onClick={ () => window.location.href = "/no" } >Check Availability</button>
 </div></div></div>
  
  </>
