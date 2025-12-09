@@ -1,53 +1,109 @@
-import React from "react"
+import React, { useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const BookingFform = () => {
-  return(
-    <> <Header />
-<div className="reservation-form">
-            <form className="form">
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone</label>
-                <input type="tel" id="phone" />
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="date">Date</label>
-                  <input type="date" id="date" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="date">Date</label>
-                  <input type="date" id="date" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="guests">Number of Guests</label>
-                <select id="guests">
-                  <option>1 person</option>
-                  <option>2 people</option>
-                  <option>3 people</option>
-                  <option>4 people</option>
-                  <option>5 people</option>
-                  <option>6+ people</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">Special Requests</label>
-                <textarea id="message" rows="3"></textarea>
-              </div>
-              <button type="submit" className="submit-btn">Book Now</button>
-            </form>
-          </div><Footer /> </>
+const API = import.meta.env.VITE_API_URL;
+
+const BookingForm = () => {
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    check_in: "",
+    check_out: "",
+    guests: 1,
+    notes: "",
+  });
+
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      await axios.post(`${API}/api/bookings`, {
+        customer_name: form.name,
+        email: form.email,
+        phone: form.phone,
+        check_in: form.check_in,
+        check_out: form.check_out,
+        guests: form.guests,
+        notes: form.notes,
+      });
+
+      alert("Booking successful!");
+      navigate("/bookingconfirm");
+
+    } catch (err) {
+      console.error("BOOKING ERROR:", err.response?.data || err.message);
+      alert("Failed to create booking");
+    }
+  }
+
+  return (
+    <>
+      <Header />
+
+      <div className="reservation-form">
+        <form className="form" onSubmit={handleSubmit}>
+
+          <div className="form-group">
+            <label>Name</label>
+            <input name="name" value={form.name} onChange={handleChange} required />
+          </div>
+
+          <div className="form-group">
+            <label>Email</label>
+            <input name="email" type="email" value={form.email} onChange={handleChange} required />
+          </div>
+
+          <div className="form-group">
+            <label>Phone</label>
+            <input name="phone" value={form.phone} onChange={handleChange} required />
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label>Check-In</label>
+              <input type="date" name="check_in" value={form.check_in} onChange={handleChange} required />
+            </div>
+
+            <div className="form-group">
+              <label>Check-Out</label>
+              <input type="date" name="check_out" value={form.check_out} onChange={handleChange} required />
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label>Guests</label>
+            <select name="guests" value={form.guests} onChange={handleChange}>
+              {[1,2,3,4,5].map(n => (
+                <option key={n} value={n}>{n}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Notes</label>
+            <textarea name="notes" value={form.notes} onChange={handleChange}></textarea>
+          </div>
+
+          <button type="submit" className="submit-btn">
+            Book Now
+          </button>
+
+        </form>
+      </div>
+
+      <Footer />
+    </>
   );
-}
+};
 
-export default BookingFform
+export default BookingForm;

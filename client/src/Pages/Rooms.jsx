@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import axios from "axios";
 
+
 const API = import.meta.env.VITE_API_URL || ""; 
 // Example: http://localhost:4000
 
@@ -26,7 +27,7 @@ const roomImages = {
   "Honeymoon": "/honeymoon.jpg",
   "Honeymoon Suite": "/honeymoon.jpg",
 };
-
+  
 // Default image if type not found
 const defaultRoomImg = "/default-room.jpg";
 
@@ -49,7 +50,7 @@ const RoomsPage = () => {
       const res = await axios.get(`${API}/api/rooms`);
       setRooms(res.data || []);
     } catch (err) {
-      console.warn("Room fetch failed, using mock data…");
+      console.warn("Room fetch failed, using mock data…",err);
 
       setRooms([
         { id: 1, name: "Deluxe Suite", type: "Deluxe", price: 300, max_guests: 2 },

@@ -24,7 +24,7 @@ const Home = () => {
         <div className="discover-image">
           <img src="/images/room1.jpg" alt="Discover" />
         </div>
-
+          
         <div className="discover-text">
           <h2>Discover Our Story</h2>
           <p>
