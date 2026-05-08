@@ -3,7 +3,9 @@ import { supabase } from "../db/supabase.js";
 
 const router = express.Router();
 
-// GET all rooms
+/* -------------------------------
+   GET ALL ROOMS
+--------------------------------*/
 router.get("/", async (req, res) => {
   const { data, error } = await supabase
     .from("rooms")
@@ -14,7 +16,25 @@ router.get("/", async (req, res) => {
   res.json(data);
 });
 
-// CREATE room
+/* -------------------------------
+   GET SINGLE ROOM BY ID
+--------------------------------*/
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+
+  const { data, error } = await supabase
+    .from("rooms")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) return res.status(400).json({ error });
+  res.json(data);
+});
+
+/* -------------------------------
+   CREATE NEW ROOM
+--------------------------------*/
 router.post("/", async (req, res) => {
   const { name, type, price, max_guests, available } = req.body;
 
@@ -27,7 +47,9 @@ router.post("/", async (req, res) => {
   res.json(data[0]);
 });
 
-// UPDATE room (correct)
+/* -------------------------------
+   UPDATE ROOM
+--------------------------------*/
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const { name, type, price, max_guests, available } = req.body;
@@ -42,7 +64,9 @@ router.put("/:id", async (req, res) => {
   res.json(data[0]);
 });
 
-// DELETE room (correct)
+/* -------------------------------
+   DELETE ROOM
+--------------------------------*/
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -55,7 +79,9 @@ router.delete("/:id", async (req, res) => {
   res.json({ message: "Room deleted" });
 });
 
-// TOGGLE availability
+/* -------------------------------
+   TOGGLE AVAILABILITY
+--------------------------------*/
 router.patch("/:id/availability", async (req, res) => {
   const { id } = req.params;
   const { available } = req.body;
@@ -66,7 +92,7 @@ router.patch("/:id/availability", async (req, res) => {
     .eq("id", id);
 
   if (error) return res.status(400).json({ error });
-  res.json({ message: "availability updated" });
+  res.json({ message: "Availability updated" });
 });
 
 export default router;
